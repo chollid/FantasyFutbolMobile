@@ -12,11 +12,13 @@ import TeamStats from "../components/TeamStats";
 import PlayerListItems from "../components/PlayerListItem";
 // import BottomSheetDrawer from "../components/BottomSheetDrawer";
 import BottomSheet, { BottomSheetFlatList } from "@gorhom/bottom-sheet";
+import Filters from "../components/Filters";
 import { StatusBar } from "expo-status-bar";
 import { players } from "../data/players";
 
 export default function TabOneScreen() {
   const playersBottomSheet = useRef<BottomSheet>(null);
+  const filterBottomSheet = useRef<BottomSheet>(null);
   const snapPoints = [0, "50%"];
 
   const viewPlayers = () => {
@@ -42,16 +44,36 @@ export default function TabOneScreen() {
             ref={playersBottomSheet}
             index={0}
             snapPoints={snapPoints}
-            // onChange={handleSheetChanges}
           >
-            {/* <View style={styles.contentContainer}> */}
+            <View style={styles.filterContainer}>
+              <Pressable
+                style={styles.filterButton}
+                onPress={() => filterBottomSheet.current?.expand()}
+              >
+                <Text
+                  style={{
+                    color: "white",
+                    fontSize: 16,
+                    fontWeight: "bold",
+                  }}
+                >
+                  Filter
+                </Text>
+              </Pressable>
+            </View>
             <BottomSheetFlatList
               data={players}
               renderItem={({ item }) => <PlayerListItems player={item} />}
             />
-            {/* </View> */}
           </BottomSheet>
-          {/* <BottomSheetDrawer snapPoints={snapPoints} /> */}
+
+          <BottomSheet
+            ref={filterBottomSheet}
+            index={0}
+            snapPoints={snapPoints}
+          >
+            <Filters />
+          </BottomSheet>
         </View>
       </ImageBackground>
     </View>
@@ -80,6 +102,29 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     padding: 15,
     borderRadius: 30,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 3,
+      height: 6,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  filterContainer: {
+    alignItems: "center",
+  },
+  filterButton: {
+    width: "60%",
+
+    alignItems: "center",
+    color: "white",
+    backgroundColor: "#333333",
+    // marginTop: "auto", //***** Very cool!
+    marginTop: 20,
+    marginVertical: 15,
+    padding: 15,
+    borderRadius: 15,
     shadowColor: "#000",
     shadowOffset: {
       width: 3,
