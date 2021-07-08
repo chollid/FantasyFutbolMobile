@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import {
   StyleSheet,
-  SafeAreaView,
   Text,
   View,
   Pressable,
@@ -9,12 +8,10 @@ import {
 } from "react-native";
 import Field from "../components/field/Field";
 import TeamStats from "../components/TeamStats";
-import PlayerListItems from "../components/PlayerListItem";
-// import BottomSheetDrawer from "../components/BottomSheetDrawer";
 import BottomSheet, { BottomSheetFlatList } from "@gorhom/bottom-sheet";
 import Filters from "../components/Filters";
 import { StatusBar } from "expo-status-bar";
-import { players } from "../data/players";
+import PlayerList from "../components/PlayersList";
 
 export default function TabOneScreen() {
   const playersBottomSheet = useRef<BottomSheet>(null);
@@ -40,6 +37,7 @@ export default function TabOneScreen() {
               View Players
             </Text>
           </Pressable>
+
           <BottomSheet
             ref={playersBottomSheet}
             index={0}
@@ -61,10 +59,7 @@ export default function TabOneScreen() {
                 </Text>
               </Pressable>
             </View>
-            <BottomSheetFlatList
-              data={players}
-              renderItem={({ item }) => <PlayerListItems player={item} />}
-            />
+            <PlayerList />
           </BottomSheet>
 
           <BottomSheet

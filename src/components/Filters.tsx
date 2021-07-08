@@ -1,7 +1,17 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { useRecoilState } from "recoil";
+import { positionFilterState } from "../atoms/Players";
 
 const Filters = () => {
+  const [positionFilter, setPositionFilter] =
+    useRecoilState(positionFilterState);
+
+  console.warn(positionFilter);
+
+  const onFilterPress = (position: string) => {
+    console.warn(position);
+  };
   return (
     <View style={styles.container}>
       <View style={styles.textBorder}>
