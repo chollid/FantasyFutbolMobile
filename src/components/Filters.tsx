@@ -1,31 +1,45 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { useRecoilState } from "recoil";
 import { positionFilterState } from "../atoms/Players";
+
+const positions = ["FWD", "MID", "DEF", "GK"];
 
 const Filters = () => {
   const [positionFilter, setPositionFilter] =
     useRecoilState(positionFilterState);
 
-  console.warn(positionFilter);
-
   const onFilterPress = (position: string) => {
-    console.warn(position);
+    setPositionFilter((currentPositionFilter) => [
+      ...currentPositionFilter,
+      position,
+    ]);
+  };
+  console.warn(positionFilter);
+  const isSelected = (position) => {
+    return positionFilter.includes(position);
   };
   return (
     <View style={styles.container}>
-      <View style={styles.textBorder}>
-        <Text style={styles.text}>FWD</Text>
-      </View>
-      <View style={styles.textBorder}>
-        <Text style={styles.text}>MID</Text>
-      </View>
-      <View style={styles.textBorder}>
-        <Text style={styles.text}>DEF</Text>
-      </View>
-      <View style={styles.textBorder}>
-        <Text style={styles.text}>GK</Text>
-      </View>
+      {/* Map through each Position in array and render a Filter button */}
+      {positions.map((position) => (
+        <Pressable
+          onPress={() => onFilterPress(position)}
+          style={[
+            styles.textBorder,
+            { backgroundColor: isSelected(position) ? "#960606" : "#ffdb91" },
+          ]}
+        >
+          <Text
+            style={[
+              styles.text,
+              { color: isSelected(position) ? "white" : "black" },
+            ]}
+          >
+            {position}
+          </Text>
+        </Pressable>
+      ))}
     </View>
   );
 };
