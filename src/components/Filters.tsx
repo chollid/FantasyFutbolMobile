@@ -10,13 +10,16 @@ const Filters = () => {
     useRecoilState(positionFilterState);
 
   const onFilterPress = (position: string) => {
-    setPositionFilter((currentPositionFilter) => [
-      ...currentPositionFilter,
-      position,
-    ]);
+    setPositionFilter((currentPositionFilter) => {
+      if (currentPositionFilter.includes(position)) {
+        return currentPositionFilter.filter((pos) => pos !== position);
+      } else {
+        return [...currentPositionFilter, position];
+      }
+    });
   };
   console.warn(positionFilter);
-  const isSelected = (position) => {
+  const isSelected = (position: any) => {
     return positionFilter.includes(position);
   };
   return (
@@ -70,6 +73,4 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   text: {},
-  sometthing: {},
-  none: {},
 });
