@@ -4,7 +4,12 @@ import { StyleSheet, Text, View } from "react-native";
 const GithubStuff = () => {
   return (
     <View>
-      <Text></Text>
+      <Text>Hi this is the new Screen for Github.</Text>
+      <Text>Hi this is the new Screen for Github.</Text>
+      <Text>Hi this is the new Screen for Github.</Text>
+      <Text>Hi this is the new Screen for Github.</Text>
+      <Text>Hi this is the new Screen for Github.</Text>
+      <Text>Hi this is the new Screen for Github.</Text>
     </View>
   );
 };
