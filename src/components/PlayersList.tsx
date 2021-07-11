@@ -4,12 +4,12 @@ import { StyleSheet, View } from "react-native";
 import PlayerListItems from "../components/PlayerListItem";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { players } from "../data/players";
-import { allPlayersState } from "../atoms/Players";
+import { allPlayersState, filteredPlayers } from "../atoms/Players";
 
 const PlayerList = () => {
   // const [players] = useRecoilState(allPlayersState); //Need value and setter
-  const players = useRecoilValue(allPlayersState); //Just the value
-  const setPlayers = useSetRecoilState(allPlayersState); //Only sets the state
+  //const setPlayers = useSetRecoilState(allPlayerState); //Only sets the state
+  const players = useRecoilValue(filteredPlayers); //Just the value
 
   return (
     <BottomSheetFlatList

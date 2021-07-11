@@ -105,10 +105,10 @@ export const players = [
   },
   {
     id: "14",
-    name: "M. Depay",
+    name: "Lionel Messi",
     match: "NED v CZE",
-    price: 10_100_000,
+    price: 13_00_000,
     position: "FWD",
-    totalPoints: 20,
+    totalPoints: 23,
   },
 ];

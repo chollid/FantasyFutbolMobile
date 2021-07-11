@@ -1,6 +1,8 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, Pressable } from "react-native";
+import { useRecoilState } from "recoil";
 import { Player } from "../types";
+import { myPlayersState } from "../atoms/MyTeam";
 
 interface Props {
   player: Player;
@@ -9,8 +11,14 @@ interface Props {
 // MediaDeviceInfo.api-sports.football/players/1.png
 
 const PlayerListItem = ({ player }: Props) => {
+  const [myPlayers, setMyPlayers] = useRecoilState(myPlayersState);
+
+  const onPress = () => {
+    console.warn("player pressed");
+  };
+
   return (
-    <View style={styles.container}>
+    <Pressable onPress={onPress} style={styles.container}>
       <Image
         source={{
           uri: `https://media.api-sports.io/football/players/${player.id}.png`,
@@ -28,7 +36,7 @@ const PlayerListItem = ({ player }: Props) => {
         <Text style={styles.position}>{player.position}</Text>
       </View>
       <Text style={styles.points}>{player.totalPoints}</Text>
-    </View>
+    </Pressable>
   );
 };
 
