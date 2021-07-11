@@ -10,10 +10,16 @@ const Filters = () => {
     useRecoilState(positionFilterState);
 
   const onFilterPress = (position: string) => {
+    // On Press of this button
+    // Set the new PositionFilter Array to :
     setPositionFilter((currentPositionFilter) => {
+      // If the Current Position Filter Array includes the Pressed Position: FWD, MID, DEF, or GK
       if (currentPositionFilter.includes(position)) {
+        //Then return a NEW Array that DOES NOT Include that position but keeps the other indexes
         return currentPositionFilter.filter((pos) => pos !== position);
       } else {
+        //If the Current Filter Array DOES NOT include that position
+        //Return the whole Array + the position
         return [...currentPositionFilter, position];
       }
     });
