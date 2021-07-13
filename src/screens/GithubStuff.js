@@ -9,7 +9,13 @@ const GithubStuff = () => {
       <Text>Hi this is the new Screen for Github.</Text>
       <Text>Hi this is the new Screen for Github.</Text>
       <Text>Hi this is the new Screen for Github.</Text>
-      <Text>Hi this is the new Screen for Github.</Text>
+      <FormData>O 88999</FormData>
+      <FormData>O 88999</FormData>
+      <FormData>O 88999</FormData>
+      <FormData>O 88999</FormData>
+      <FormData>O 88999</FormData>
+      <FormData>O 88999</FormData>
+      <FormData>O 88999</FormData>
     </View>
   );
 };
