@@ -20,17 +20,18 @@ const GitHub = () => {
       <View>
         <Text>This is a new section of the App</Text>
         <Text>This is a new section of the App</Text>
-        <Text>This is a new section of the App</Text>
-        <Text>This is a new section of the App</Text>
-        <Text>This is a new section of the App</Text>
-        <Text>This is a new section of the App</Text>
-        <Text>This is a new section of the App</Text>
-        <Text>This is a new section of the App</Text>
-        <Text>This is a new section of the App</Text>
-        <Text>This is a new section of the App</Text>
-        <Text>This is a new section of the App</Text>
-        <Text>This is a new section of the App</Text>
-        <Text>This is a new section of the App</Text>
+        <Text>No dont' use this at all</Text>
+        <Text>No dont' use this at all</Text>
+        <Text>No dont' use this at all</Text>
+        <Text>No dont' use this at all</Text>
+        <Text>No dont' use this at all</Text>
+        <Text>No dont' use this at all</Text>
+        <Text>No dont' use this at all</Text>
+        <Text>No dont' use this at all</Text>
+        <Text>No dont' use this at all</Text>
+        <Text>No dont' use this at all</Text>
+        <Text>No dont' use this at all</Text>
+        <Text>No dont' use this at all</Text>
       </View>
     </View>
   );
