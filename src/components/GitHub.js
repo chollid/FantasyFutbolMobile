@@ -14,6 +14,16 @@ const GitHub = () => {
           thisThing();
         }}
       ></Button>
+      <Tex>Hi there, let's play Soccer!</Tex>
+      <Tex>Hi there, let's play Soccer!</Tex>
+      <Tex>Hi there, let's play Soccer!</Tex>
+      <Tex>Hi there, let's play Soccer!</Tex>
+      <Tex>Hi there, let's play Soccer!</Tex>
+      <Tex>Hi there, let's play Soccer!</Tex>
+      <Tex>Hi there, let's play Soccer!</Tex>
+      <Tex>Hi there, let's play Soccer!</Tex>
+      <Tex>Hi there, let's play Soccer!</Tex>
+      <Tex>Hi there, let's play Soccer!</Tex>
     </View>
   );
 };
